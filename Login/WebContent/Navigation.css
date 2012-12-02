@@ -1,0 +1,29 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}
+#nav{
+	position: relative;
+	background: #5BD4FF;
+	text-align: center;
+	border-style: none;
+	width: 1000px
+	height: 30px;
+	
+}
+#nav a{
+	margin: 0px 0px 0px 10px;
+	font: bold 20px Tahoma;
+	text-decoration: none;
+}
+#nav a:link, a:visited{
+	font: bold 20px Tahoma;
+	color: Blue;
+}
+#nav a:hover{
+	font: bold 20px Tahoma;
+	color: Yellow;
+}
+
+

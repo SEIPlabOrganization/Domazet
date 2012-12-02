@@ -1,0 +1,89 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}
+h1{
+	font: bold 40px Tahoma;
+}
+h2{
+	font: bold 20px Tahoma;
+}
+header, section, footer, aside, nav{
+	display: block;
+}
+body{
+	height: 100%;
+	text-align: center;
+	background: white;
+}
+html {height: 100%;
+	min-height: 500px;
+}
+
+#main_wrapper{
+	height: 100%;
+	border: 0px solid black;
+	width: 1000px;
+	margin: 0px auto;
+	text-align: left;
+}
+
+#top_header{
+	position: relative;
+	padding-top: 5px;
+	height: 50px;
+	
+}
+#top_header img, h1{
+	vertical-align: middle;
+	display: inline-block;
+	height: 40px;
+}
+#top_header h1{
+	margin: 0px 0px 0px 10px;
+}
+
+#navigation{
+	position: relative;
+	background: #5BD4FF;
+	text-align: center;
+	border-style: none;
+	width: 1000px
+	height: 30px;
+	
+}
+#navigation a{
+	margin: 0px 0px 0px 10px;
+	font: bold 20px Tahoma;
+	text-decoration: none;
+}
+#navigation a:link, a:visited{
+	font: bold 20px Tahoma;
+	color: Blue;
+}
+#navigation a:hover{
+	font: bold 20px Tahoma;
+	color: Yellow;
+}
+
+#tools{
+	-moz-box-sizing: border-box;
+	height: 100%;
+	width: 1000px;
+	border-style: none;
+	margin-bottom: -20px;
+	margin-top: -90px;
+	padding-top: 90px;
+	padding-bottom: 20px;
+	
+}
+
+#bottom_footer{
+	clear: both;
+	position: relative;
+	height: 20px;
+	background: #5BD4FF;
+}
+
+

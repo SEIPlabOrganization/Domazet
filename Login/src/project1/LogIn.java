@@ -1,0 +1,41 @@
+package project1;
+
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.sql.ResultSet;
+
+
+
+
+public class LogIn {
+	private String protpass;
+	private MySQLcon db;
+	private ResultSet r;
+	
+	public LogIn(String u ,String s){
+		try{
+			MessageDigest m=MessageDigest.getInstance("MD5");
+			m.update(s.getBytes(),0,s.length());
+			protpass = new BigInteger(1,m.digest()).toString(16);
+			 
+			db = new MySQLcon("jdbc:mysql://localhost/test", "root", "a");
+			r = db.Quer("SELECT * FROM Users WHERE User_name='"+ u +"' AND User_password='"+ protpass +"';");
+		}catch (Exception e){
+			protpass = null;
+			e.printStackTrace();
+		}
+	}
+	
+	public String sucess(){
+		try {
+			if(r.first()){ //Is result set not empty?
+				return r.getString("Userid");
+			}else{
+				return null;
+			}
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+}
