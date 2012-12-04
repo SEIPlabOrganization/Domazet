@@ -11,7 +11,7 @@ import java.sql.ResultSet;
  * For it to work, the mysql-connector-java-5.1.22-bin.jar library needs to be accessible to the app.
  * To make it accessible download "http://cdn.mysql.com/Downloads/Connector-J/mysql-connector-java-5.1.22.tar.gz".
  * From the downloaded file extract the .jar file and put it in the lib directory of the server.
- * The lib directory is located in the directory that the server was installed. 
+ * The lib directory is located in the directory that the server was installed.
  */
 
 public class MySQLcon {
