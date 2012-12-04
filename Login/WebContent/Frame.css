@@ -1,7 +1,6 @@
 *{
 	margin: 0px;
-	padding: 0px;
-	
+	padding: 0px;	
 }
 h1{
 	font: bold 40px Tahoma;
@@ -30,15 +29,16 @@ html {height: 100%;
 }
 
 #top_header{
+	-moz-box-sizing: border-box;
 	position: relative;
-	padding-top: 5px;
-	height: 50px;
+	padding-top: 3px;
+	height: 55px;
 	
 }
 #top_header img, h1{
 	vertical-align: middle;
 	display: inline-block;
-	height: 40px;
+	height: 45px;
 }
 #top_header h1{
 	margin: 0px 0px 0px 10px;
@@ -57,8 +57,8 @@ html {height: 100%;
 	width: 1000px;
 	border-style: none;
 	margin-bottom: -20px;
-	margin-top: -90px;
-	padding-top: 90px;
+	margin-top: -95px;
+	padding-top: 95px;
 	padding-bottom: 20px;
 	
 }

@@ -17,7 +17,6 @@ public class LogIn {
 			MessageDigest m=MessageDigest.getInstance("MD5");
 			m.update(s.getBytes(),0,s.length());
 			protpass = new BigInteger(1,m.digest()).toString(16);
-			 
 			db = new MySQLcon("jdbc:mysql://localhost/test", "root", "a");
 			r = db.Quer("SELECT * FROM Users WHERE User_name='"+ u +"' AND User_password='"+ protpass +"';");
 		}catch (Exception e){
