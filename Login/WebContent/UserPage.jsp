@@ -48,7 +48,7 @@
 			</td>
 			
 			<td id="msg_app">
-			<iframe src="msg_app.jsp" height="100%" width="100%" frameborder="1"></iframe>
+			<iframe src="msg_app.jsp" height="100%" width="100%" frameborder="0"></iframe>
 			</td>
 		</tr>
 	</table>

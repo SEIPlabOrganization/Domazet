@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="main">
-	<!-- <div id="mywall">
+	Unread messages:
 		<table border="2" cellpadding="0" cellspacing="0" class="navbar">
 			<tr class="tablelink">
 				<td class="tablelink">
@@ -29,7 +29,158 @@
 				</a>
 				</td>
 			</tr>
-		</table>-->
+			
+			<!--  
+			</tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr>
+			</tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr></tr>
+			<tr class="tablelink">
+				<td class="tablelink">
+				<a href="" class="boxlink">
+					From: Neko<br/>
+					<div style="text-align: center; padding-top: 3px; padding-bottom: 3px;">Subject:</div>
+					<div style="text-align: center;">neki subjekt koj sam napisao da vidim k</div>
+				</a>
+				</td>
+			</tr>
+			-->
+			
+			
+		</table>
 </div>
 </body>
 </html>
