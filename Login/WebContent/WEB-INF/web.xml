@@ -69,4 +69,14 @@
     <servlet-name>UserInfoServlet</servlet-name>
     <url-pattern>/UserInfoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MsgAppServlet</display-name>
+    <servlet-name>MsgAppServlet</servlet-name>
+    <servlet-class>project1.MsgAppServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MsgAppServlet</servlet-name>
+    <url-pattern>/MsgAppServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

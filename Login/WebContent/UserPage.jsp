@@ -36,7 +36,7 @@
 					</tr>
 					
 					<tr height="100px" >
-						<td>
+						<td style="text-align: center;">
 							<textarea rows="5" cols="22" id="des" onfocus="blur();"></textarea>
 						</td>
 					</tr>
@@ -48,7 +48,7 @@
 			</td>
 			
 			<td id="msg_app">
-			<iframe src="msg_app.jsp" height="100%" width="100%" frameborder="0"></iframe>
+			<iframe src="msg_app.jsp" height="100%" width="100%" frameborder="1"></iframe>
 			</td>
 		</tr>
 	</table>

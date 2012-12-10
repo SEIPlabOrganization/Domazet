@@ -6,11 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="Navigation.css" />
 </head>
-<body id="nav">
-
-	<a href="UserPage.jsp" target="tools">Home</a>
-	<a href="">Nesto</a>
-	<a href="Register.jsp" target="tools">Change password</a> 
-	<a href="LogIn.jsp" target="tools">Log Out</a>
+<body>
+	<div id="nav">
+		<a href="UserPage.jsp" target="tools">Home</a>
+		<a href="">Nesto</a>
+		<a href="Register.jsp" target="tools">Change password</a> 
+		<a href="LogIn.jsp" target="tools">Log Out</a>
+	</div>
 </body>
 </html>
