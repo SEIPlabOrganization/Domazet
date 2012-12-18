@@ -17,7 +17,10 @@ public class LogIn {
 			MessageDigest m=MessageDigest.getInstance("MD5");
 			m.update(s.getBytes(),0,s.length());
 			protpass = new BigInteger(1,m.digest()).toString(16);
-			db = new MySQLcon("jdbc:mysql://localhost/test", "root", "a");
+			while((32-protpass.length())!=0){
+				protpass="0"+protpass;
+			}
+			db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
 			r = db.Quer("SELECT * FROM Users WHERE User_name='"+ u +"' AND User_password='"+ protpass +"';");
 		}catch (Exception e){
 			protpass = null;
@@ -28,7 +31,7 @@ public class LogIn {
 	public String sucess(){
 		try {
 			if(r.first()){ //Is result set not empty?
-				return r.getString("Userid");
+				return r.getString("idUsers");
 			}else{
 				return null;
 			}

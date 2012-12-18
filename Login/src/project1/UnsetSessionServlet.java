@@ -15,5 +15,8 @@ public class UnsetSessionServlet extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		session.invalidate();
 		}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 
 }

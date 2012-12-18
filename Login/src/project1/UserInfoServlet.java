@@ -20,8 +20,8 @@ public class UserInfoServlet extends HttpServlet {
 			HttpSession session = request.getSession(true);
 			String userid = (String) session.getAttribute("userid");
 			PrintWriter out = response.getWriter();
-			MySQLcon db = new MySQLcon("jdbc:mysql://localhost/test", "root", "a");
-			ResultSet r = db.Quer("SELECT * FROM Users WHERE Userid='"+ userid +"';");
+			MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+			ResultSet r = db.Quer("SELECT * FROM Users WHERE idUsers='"+ userid +"';");
 			r.first();
 			out.print("User info <br/><br/>");
 			out.print("Name: "+r.getString("Name")+"<br/><br/>");

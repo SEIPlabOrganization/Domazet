@@ -79,4 +79,24 @@
     <servlet-name>MsgAppServlet</servlet-name>
     <url-pattern>/MsgAppServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TeamChoiceServlet</display-name>
+    <servlet-name>TeamChoiceServlet</servlet-name>
+    <servlet-class>project1.TeamChoiceServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeamChoiceServlet</servlet-name>
+    <url-pattern>/TeamChoiceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InputUsersServlet</display-name>
+    <servlet-name>InputUsersServlet</servlet-name>
+    <servlet-class>project1.InputUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InputUsersServlet</servlet-name>
+    <url-pattern>/InputUsersServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

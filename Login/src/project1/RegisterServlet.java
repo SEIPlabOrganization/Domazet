@@ -1,8 +1,6 @@
 package project1;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
@@ -21,15 +19,13 @@ public class RegisterServlet extends HttpServlet {
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try{
 				HttpSession session = request.getSession(true);
-				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/test", "root", "a");
-				ResultSet r = db.Quer("SELECT * FROM Users WHERE Userid='"+ session.getAttribute("userid") +"';");
+				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+				ResultSet r = db.Quer("SELECT * FROM Users WHERE idUsers='"+ session.getAttribute("userid") +"';");
 				r.first();
-				String pass1=r.getString("User_password");
-				String pass2=r.getString("Userid");
-				MessageDigest m=MessageDigest.getInstance("MD5");
-				m.update(pass2.getBytes(),0,pass2.length());
-				pass2 = new BigInteger(1,m.digest()).toString(16);
-	
+				String pass1 = r.getString("User_password");
+				ProjSec sec = new ProjSec();
+				String pass2 = sec.toMD5(r.getString("idUsers"));
+				
 				if(r.getString("User_name").equalsIgnoreCase(r.getString("Name")+"."+r.getString("Surname")) && pass2.equalsIgnoreCase(pass1)){
 					session.setAttribute( "newacc", "yes"); 
 					ServletContext sc = this.getServletContext();
@@ -43,5 +39,4 @@ public class RegisterServlet extends HttpServlet {
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			doGet(request, response);
 		}
-
 }

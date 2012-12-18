@@ -2,11 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="UserPage.css" />
+
+<jsp:include page="/RegisterServlet" flush="false" />
+<jsp:include page="/Secservlet" flush="false" />
+
 <script type="text/javascript">
 	function Def() {
 		document.getElementById("des").innerHTML="Tool Description";
@@ -20,8 +23,6 @@
 </script>
 </head>
 <body onload="Def()">
-	<jsp:include page="/Secservlet" flush="false" />
-	<jsp:include page="/RegisterServlet" flush="false" />
 	<table>
 		<tr>
 			<td id="tool_list">

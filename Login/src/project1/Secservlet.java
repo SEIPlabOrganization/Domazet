@@ -22,6 +22,11 @@ public class Secservlet extends HttpServlet {
 			RequestDispatcher rd = sc.getRequestDispatcher("/LogIn.jsp");
 			rd.forward(request, response);
 		}
+		if(session.getAttribute("teamid")==null){
+			ServletContext sc = this.getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher("/TeamChoice.jsp");
+			rd.forward(request, response);
+		}
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
