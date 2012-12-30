@@ -5,13 +5,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
- 
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
- 
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -23,14 +25,15 @@ public class InputUsersServlet extends HttpServlet {
 	private File tmpDir;
 	private static final String DESTINATION_DIR_PATH ="/files";
 	private File destinationDir;
- 
+	private String realPath;
+	private String ret;
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		tmpDir = new File(TMP_DIR_PATH);
 		if(!tmpDir.isDirectory()) {
 			throw new ServletException(TMP_DIR_PATH + " is not a directory");
 		}
-		String realPath = getServletContext().getRealPath(DESTINATION_DIR_PATH);
+		realPath = getServletContext().getRealPath(DESTINATION_DIR_PATH);
 		destinationDir = new File(realPath);
 		if(!destinationDir.isDirectory()) {
 			throw new ServletException(DESTINATION_DIR_PATH+" is not a directory --"+realPath);
@@ -41,9 +44,6 @@ public class InputUsersServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    PrintWriter out = response.getWriter();
 	    response.setContentType("text/plain");
-	    out.println("<h1>Servlet File Upload Example using Commons File Upload</h1>");
-	    out.println();
- 
 		DiskFileItemFactory  fileItemFactory = new DiskFileItemFactory ();
 		/*
 		 *Set the size threshold, above which content will be stored on disk.
@@ -63,33 +63,27 @@ public class InputUsersServlet extends HttpServlet {
 			Iterator itr = items.iterator();
 			while(itr.hasNext()) {
 				FileItem item = (FileItem) itr.next();
-				/*
-				 * Handle Form Fields.
-				 */
-				if(item.isFormField()) {
-					out.println("File Name = "+item.getFieldName()+", Value = "+item.getString());
-				} else {
-					//Handle Uploaded files.
-					out.println("Field Name = "+item.getFieldName()+
-						", File Name = "+item.getName()+
-						", Content type = "+item.getContentType()+
-						", File Size = "+item.getSize());
-					/*
-					 * Write file to the ultimate location.
-					 */
-					File file = new File(destinationDir,item.getName());
-					item.write(file);
-					ReadExcelFile xls = new ReadExcelFile();
-					xls.ReadCSV("/home/nikola/git/Nikola_Domazet/Login/proj1.xls");
-					xls.toString();
-					out.println(xls.addToDB());
-				}
-				out.close();
+				File file = new File(destinationDir,item.getName());
+				item.write(file);
+				ReadExcelFile xls = new ReadExcelFile();
+				xls.ReadCSV(realPath+"/"+item.getName());
+				xls.toString();
+				ret = xls.addToDB();
+				File file1 = new File(realPath+"/"+item.getName());
+	    		file1.delete();
 			}
 		}catch(FileUploadException ex) {
 			log("Error encountered while parsing the request",ex);
 		} catch(Exception ex) {
 			log("Error encountered while uploading file",ex);
+		}
+		try {
+			ServletContext sc = this.getServletContext();
+			RequestDispatcher rd = sc.getRequestDispatcher("/InputUsers.jsp?ret="+ret);
+			rd.forward(request, response);
+			return;
+		}catch(Exception e){
+			e.printStackTrace();
 		}
  
 	}

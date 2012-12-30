@@ -99,4 +99,14 @@
     <servlet-name>InputUsersServlet</servlet-name>
     <url-pattern>/InputUsersServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>New_msgServlet</display-name>
+    <servlet-name>New_msgServlet</servlet-name>
+    <servlet-class>project1.New_msgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>New_msgServlet</servlet-name>
+    <url-pattern>/New_msgServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

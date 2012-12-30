@@ -31,7 +31,7 @@ public class TeamChoiceServlet extends HttpServlet {
 				ResultSet r = db.Quer("SELECT * FROM Users_team WHERE Users_idUsers='"+ userid +"';");
 				ResultSet r2;
 				out.print("<table>");
-				if(r.next()){
+				while(r.next()){
 					r2 = db.Quer("SELECT * FROM Team WHERE idTeam='"+r.getString("Team_idTeam")+"';");
 					if(r2.first()){
 						out.print("<tr><td>Team ID:</td>");
