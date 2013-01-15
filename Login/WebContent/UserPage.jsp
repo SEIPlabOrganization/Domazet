@@ -29,7 +29,7 @@
 				<table>
 					<tr>
 						<td>
-							<a href="New_msg.jsp" target="tools" onmouseover="Tool1()" onmouseout="Def()">New messages</a><br/><br/>
+							<a href="New_msg.jsp" target="tools" onmouseover="Tool1()" onmouseout="Def()">Tool2</a><br/><br/>
 							<a href="" target="tools" onmouseover="Tool2()" onmouseout="Def()">Tool2</a><br/><br/>
 							<a href="" target="tools" onmouseover="mouseOver()" onmouseout="Def()">Tool3</a><br/><br/>
 							<a href="" target="tools" onmouseover="mouseOver()" onmouseout="Def()">Tool4</a>

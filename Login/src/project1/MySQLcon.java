@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import org.owasp.validator.html.*;
 
 /*
  * Class used for working with the data base.
@@ -75,4 +77,140 @@ public class MySQLcon {
 			return false;
 		}
 	}
+	
+	//Method to close the connection to the DB
+	public boolean Close() {
+		try{
+			 //Close connection to DB
+			con.close();
+			
+			return true;
+		}catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	//Method to convert a string of text to XSS atack and SQL injection safe text
+	public String Sec(String s) {
+		try{
+			s=toSafeHtml(s);
+			ArrayList<Character> al = new ArrayList<Character>();
+			char c[]=s.toCharArray();
+			for(int i=0; i<c.length; i++){
+				al.add(c[i]);
+			}
+			for(int i=0; i<al.size(); i++){
+
+				if(al.get(i)=='/'){
+					al.add(i, '/');
+					i++;
+				}
+				if(al.get(i)=='%'){
+					al.add(i, '%');
+					i++;
+				}
+				if(al.get(i)=='!'){
+					al.add(i, '!');
+					i++;
+				}
+				if(al.get(i)=='@'){
+					al.add(i, '@');
+					i++;
+				}
+				if(al.get(i)=='"'){
+					al.set(i, '/');
+				}
+				if(al.get(i)=='\''){
+					al.set(i, '%');
+				}
+				if(al.get(i)==';'){
+					al.set(i, '!');
+				}
+				if(al.get(i)=='-'){
+					al.set(i, '@');
+				}
+					
+			}
+			s="";
+			for(int i=0; i<al.size(); i++){
+				s+=al.get(i);
+			}
+			return s;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	//Method to normaly display SQL injection protected text from the database
+	public String SecGet(String s) {
+		int a;
+		try{
+			ArrayList<Character> al = new ArrayList<Character>();
+			char c[]=s.toCharArray();
+			for(int i=0; i<c.length; i++){
+				al.add(c[i]);
+			}
+			for(int i=0; i<al.size(); i++){
+				a=1;
+				if(i<(al.size()-1)){
+					if((al.get(i)=='/')&&(al.get(i+1)=='/')){
+						al.remove(i);
+						a=0;
+					}
+					if((al.get(i)=='%')&&(al.get(i+1)=='%')){
+						al.remove(i);
+						a=0;
+					}
+					if((al.get(i)=='!')&&(al.get(i+1)=='!')){
+						al.remove(i);
+						a=0;
+					}
+					if((al.get(i)=='@')&&(al.get(i+1)=='@')){
+						al.remove(i);
+						a=0;
+					}
+				}
+				if(a==1){
+					if(al.get(i)=='"'){
+						al.set(i, '/');
+					}
+					if(al.get(i)=='%'){
+						al.set(i, '\'');
+					}
+					if(al.get(i)=='!'){
+						al.set(i, ';');
+					}
+					if(al.get(i)=='@'){
+						al.set(i, '-');
+					}
+				}
+					
+			}
+			s="";
+			for(int i=0; i<al.size(); i++){
+				s+=al.get(i);
+			}
+			return s;
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+
+	//Private method to convert a string in to XSS atack safe text
+	private String toSafeHtml(String html){
+
+		try{
+		    Policy policy = Policy.getInstance("/home/nikola/git/Nikola_Domazet/Login/antisamy-slashdot-1.4.4.xml");
+		    AntiSamy antiSamy = new AntiSamy();
+		    CleanResults cleanResults = antiSamy.scan(html, policy);
+		    return cleanResults.getCleanHTML().trim();
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 }

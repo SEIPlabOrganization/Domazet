@@ -10,6 +10,9 @@
 <h2>Unread messages:</h2>
 <br/>
 <div id="main">
+<jsp:include page="/MsgAppServlet" flush="true" />
+
+<!--  
 		<table border="2" cellpadding="0" cellspacing="0" class="navbar">
 			<tr class="tablelink">
 				<td class="tablelink">
@@ -51,6 +54,7 @@
 			
 			
 		</table>
+		-->
 </div>
 </body>
 </html>

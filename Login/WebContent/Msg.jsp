@@ -1,33 +1,52 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
+
 <html>
 <head>
-  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-  <jsp:include page="/SecWithTeamServlet" flush="false" />
-  <script>
-  $(document).ready(function() {
-    $("#tabs").tabs();
-  });
-  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="MsgPage.css" />
+
+ <jsp:include page="/SecTeamServlet" flush="false" />
+
+<script type="text/javascript">
+	function Def() {
+		document.getElementById("des").innerHTML="Tool Description";
+	}
+    function Tool1() {
+    	document.getElementById("des").innerHTML="Tool1 info";
+    }
+    function Tool2() {
+   		document.getElementById("des").innerHTML="Tool2 info";
+   	}
+</script>
 </head>
-<body style="font-size:62.5%;">
-  
-<div id="tabs">
-    <ul>
-        <li><a href="#fragment-1">Archive</a></li>
-        <li><a href="#fragment-2">My Posts</a></li>
-        <li><a href="#fragment-3">Write new Post</a></li>
-    </ul>
-    <div id="fragment-1">
-        
-    </div>
-    <div id="fragment-2">
-        
-    </div>
-    <div id="fragment-3">
-        <jsp:include page="/SecWithTeamServlet.jsp" flush="false" />
-    </div>
-</div>
+<body onload="Def()">
+	<table>
+		<tr>
+			<td id="tool_list">
+				<table>
+					<tr>
+						<td>
+							<a href="Archive_msg.jsp" target="msgwin" onmouseover="Tool1()" onmouseout="Def()">Archive</a><br/><br/>
+							<a href="My_msg.jsp" target="msgwin" onmouseover="Tool2()" onmouseout="Def()">My Posts</a><br/><br/>
+							<a href="New_msg.jsp" target="msgwin" onmouseover="mouseOver()" onmouseout="Def()">Write new Post</a><br/><br/>
+							
+						</td>
+					</tr>
+					
+					<tr height="100px" >
+						<td style="text-align: center;">
+							<textarea rows="5" cols="22" id="des" onfocus="blur();"></textarea>
+						</td>
+					</tr>
+				</table>
+			</td>
+			
+			<td id="msg_app">
+			<iframe name="msgwin" height="100%" width="100%" frameborder="0"></iframe>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>

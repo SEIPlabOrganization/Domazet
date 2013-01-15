@@ -8,7 +8,7 @@
 <body>
 	<div id="nav">
 		<a href="UserPage.jsp" target="tools">Home</a>
-		<a href="">Nesto</a>
+		<a href="Msg.jsp" target="tools">Messages</a>
 		<a href="Register.jsp" target="tools">Change password</a> 
 		<a href="LogIn.jsp" target="tools">Log Out</a>
 	</div>

@@ -109,4 +109,54 @@
     <servlet-name>New_msgServlet</servlet-name>
     <url-pattern>/New_msgServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SecTeamServlet</display-name>
+    <servlet-name>SecTeamServlet</servlet-name>
+    <servlet-class>project1.SecTeamServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SecTeamServlet</servlet-name>
+    <url-pattern>/SecTeamServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>My_msgServlet</display-name>
+    <servlet-name>My_msgServlet</servlet-name>
+    <servlet-class>project1.My_msgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>My_msgServlet</servlet-name>
+    <url-pattern>/My_msgServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Archive_msgServlet</display-name>
+    <servlet-name>Archive_msgServlet</servlet-name>
+    <servlet-class>project1.Archive_msgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Archive_msgServlet</servlet-name>
+    <url-pattern>/Archive_msgServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadArchive_msgServlet</display-name>
+    <servlet-name>ReadArchive_msgServlet</servlet-name>
+    <servlet-class>project1.ReadArchive_msgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadArchive_msgServlet</servlet-name>
+    <url-pattern>/ReadArchive_msgServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReadApp_msgServlet</display-name>
+    <servlet-name>ReadApp_msgServlet</servlet-name>
+    <servlet-class>project1.ReadApp_msgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReadApp_msgServlet</servlet-name>
+    <url-pattern>/ReadApp_msgServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
