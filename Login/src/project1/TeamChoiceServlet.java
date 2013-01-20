@@ -22,7 +22,7 @@ public class TeamChoiceServlet extends HttpServlet {
 			if(request.getParameter("teamid")!=null){
 				session.setAttribute("teamid", request.getParameter("teamid"));
 				ServletContext sc = this.getServletContext();
-				RequestDispatcher rd = sc.getRequestDispatcher("/UserPage.jsp");
+				RequestDispatcher rd = sc.getRequestDispatcher("/Frame.jsp");
 				rd.forward(request, response);
 			}else{
 				String userid = (String) session.getAttribute("userid");

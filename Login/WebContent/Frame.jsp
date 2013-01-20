@@ -1,9 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.util.*"%>
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Home Page</title>
 	<link rel="stylesheet" href="Frame.css" />
+	<jsp:include page="/SecServlet" flush="false" />
 </head>
 <body>
 	<div id="main_wrapper">
@@ -14,10 +18,7 @@
 		<h1>Prototip</h1>
 		</header>
 		
-		<iframe src="Nav.jsp" id="navigation" ></iframe>
-
-		<iframe name="tools" src="UserPage.jsp" id="tools" ></iframe> 
-		
+		<jsp:include page="/FrameServlet" flush="true" />
 
 		<footer id="bottom_footer">
 		info

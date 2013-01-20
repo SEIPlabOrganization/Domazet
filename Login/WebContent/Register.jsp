@@ -8,7 +8,7 @@ table{ margin: auto; position: absolute; top: 100px; bottom: 0px; left: 0px; rig
 </style>
 </head>
 <body >
-	<jsp:include page="/Secservlet" flush="false" />
+	<jsp:include page="/SecServlet" flush="false" />
 	<form method="POST" action="ChangeAccServlet">
 	<table style="text-align: right;">
 		<%

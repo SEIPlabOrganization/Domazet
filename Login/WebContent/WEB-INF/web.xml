@@ -159,4 +159,24 @@
     <servlet-name>ReadApp_msgServlet</servlet-name>
     <url-pattern>/ReadApp_msgServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>JMBAGappServlet</display-name>
+    <servlet-name>JMBAGappServlet</servlet-name>
+    <servlet-class>project1.JMBAGappServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JMBAGappServlet</servlet-name>
+    <url-pattern>/JMBAGappServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FrameServlet</display-name>
+    <servlet-name>FrameServlet</servlet-name>
+    <servlet-class>project1.FrameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FrameServlet</servlet-name>
+    <url-pattern>/FrameServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

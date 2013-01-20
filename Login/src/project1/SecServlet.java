@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class Secservlet extends HttpServlet {
+public class SecServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
@@ -20,11 +20,6 @@ public class Secservlet extends HttpServlet {
 		if(session.getAttribute("userid")==null){
 			ServletContext sc = this.getServletContext();
 			RequestDispatcher rd = sc.getRequestDispatcher("/LogIn.jsp");
-			rd.forward(request, response);
-		}
-		if(session.getAttribute("teamid")==null){
-			ServletContext sc = this.getServletContext();
-			RequestDispatcher rd = sc.getRequestDispatcher("/TeamChoice.jsp");
 			rd.forward(request, response);
 		}
 	}

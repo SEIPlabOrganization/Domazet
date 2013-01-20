@@ -28,7 +28,7 @@ public class Loginservlet extends HttpServlet {
 			session.setAttribute( "userid", userid); 
 		}
 		ServletContext sc = this.getServletContext();
-		RequestDispatcher rd = sc.getRequestDispatcher("/UserPage.jsp");
+		RequestDispatcher rd = sc.getRequestDispatcher("/Frame.jsp");
 		rd.forward(request, response);
 	}
 
