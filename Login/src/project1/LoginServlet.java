@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-public class Loginservlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     
@@ -25,7 +25,8 @@ public class Loginservlet extends HttpServlet {
 		
 		if(userid != null){
 			HttpSession session = request.getSession(true);
-			session.setAttribute( "userid", userid); 
+			session.setAttribute( "userid", userid);
+			session.setAttribute( "userrole", log.role()); 
 		}
 		ServletContext sc = this.getServletContext();
 		RequestDispatcher rd = sc.getRequestDispatcher("/Frame.jsp");

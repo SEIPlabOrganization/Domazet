@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="msg_app.css" />
-<jsp:include page="/Secservlet" flush="false" />
+<jsp:include page="/SecServlet" flush="false" />
 </head>
 <body>
 <h2>Unread messages:</h2>

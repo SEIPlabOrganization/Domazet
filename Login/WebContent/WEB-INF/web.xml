@@ -11,23 +11,23 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>Loginservlet</display-name>
-    <servlet-name>Loginservlet</servlet-name>
-    <servlet-class>project1.Loginservlet</servlet-class>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>project1.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Loginservlet</servlet-name>
-    <url-pattern>/Loginservlet</url-pattern>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Secservlet</display-name>
-    <servlet-name>Secservlet</servlet-name>
-    <servlet-class>project1.Secservlet</servlet-class>
+    <display-name>SecServlet</display-name>
+    <servlet-name>SecServlet</servlet-name>
+    <servlet-class>project1.SecServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Secservlet</servlet-name>
-    <url-pattern>/Secservlet</url-pattern>
+    <servlet-name>SecServlet</servlet-name>
+    <url-pattern>/SecServlet</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

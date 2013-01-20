@@ -17,18 +17,22 @@ public class TeamChoiceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+		ResultSet r;
 		try{
 			HttpSession session = request.getSession(true);
+			String userid = (String) session.getAttribute("userid");
 			if(request.getParameter("teamid")!=null){
 				session.setAttribute("teamid", request.getParameter("teamid"));
+				r = db.Quer("SELECT * FROM Users_team WHERE Users_idUsers='"+ userid +"' AND Team_idTeam='"+request.getParameter("teamid")+"';");
+				r.first();
+				session.setAttribute("teamrole", r.getString("Responsibility_idResponsibility"));
 				ServletContext sc = this.getServletContext();
 				RequestDispatcher rd = sc.getRequestDispatcher("/Frame.jsp");
 				rd.forward(request, response);
 			}else{
-				String userid = (String) session.getAttribute("userid");
 				PrintWriter out = response.getWriter();
-				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
-				ResultSet r = db.Quer("SELECT * FROM Users_team WHERE Users_idUsers='"+ userid +"';");
+				r = db.Quer("SELECT * FROM Users_team WHERE Users_idUsers='"+ userid +"';");
 				ResultSet r2;
 				out.print("<table>");
 				while(r.next()){
@@ -43,8 +47,6 @@ public class TeamChoiceServlet extends HttpServlet {
 						out.print("<tr><td colspan='3' style='height: 20px;'></td></tr>");
 					}
 				}
-				out.print("<tr><td colspan='2'>Create a new team</td>");
-				out.print("<td><a href=''>Chose</a></td></tr>");
 				out.print("</table>");
 			}
 		

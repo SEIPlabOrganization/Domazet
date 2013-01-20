@@ -42,7 +42,6 @@ public class MsgAppServlet extends HttpServlet {
 		}
 		
 		Query+=") AND Messages.Read=0 ORDER BY Date ASC;";
-		System.out.println(Query);
 		r=db.Quer(Query);
 		out.println("<table border=\"2\" cellpadding=\"0\" cellspacing=\"0\" class=\"navbar\">");
 		try{

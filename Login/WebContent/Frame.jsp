@@ -6,6 +6,15 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Home Page</title>
+	<script type="text/javascript">
+	<!--
+		if (top.location!= self.location) {
+			top.location = self.location.href
+		}
+		if(document.URL!="http://localhost:8080/Login/Frame.jsp")
+			location.href="http://localhost:8080/Login/Frame.jsp";
+	//-->
+	</script>
 	<link rel="stylesheet" href="Frame.css" />
 	<jsp:include page="/SecServlet" flush="false" />
 </head>

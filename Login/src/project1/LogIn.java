@@ -39,5 +39,16 @@ public class LogIn {
 			return null;
 		}
 	}
+	public String role(){
+		try {
+			if(r.first()){ //Is result set not empty?
+				return r.getString("Role");
+			}else{
+				return null;
+			}
+		} catch (Exception e) {
+			return null;
+		}
+	}
 	
 }

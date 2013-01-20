@@ -34,6 +34,7 @@ public class InputUsersServlet extends HttpServlet {
 			throw new ServletException(TMP_DIR_PATH + " is not a directory");
 		}
 		realPath = getServletContext().getRealPath(DESTINATION_DIR_PATH);
+		
 		destinationDir = new File(realPath);
 		if(!destinationDir.isDirectory()) {
 			throw new ServletException(DESTINATION_DIR_PATH+" is not a directory --"+realPath);
