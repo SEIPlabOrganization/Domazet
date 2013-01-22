@@ -56,12 +56,12 @@ public class My_msgServlet extends HttpServlet {
 		out.println("</form>");
 		out.println("<table>");
 		out.println("<tr>");
-		out.println("<th>");
+		out.println("<th id='read'>");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='subject'>");
 		out.println("Subject ");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='date'>");
 		
 		if(dateAr.equalsIgnoreCase("up")){
 			out.println("<a href='My_msg.jsp?datear=down&sub="+filter+"'>");
@@ -75,17 +75,17 @@ public class My_msgServlet extends HttpServlet {
 			}
 		out.println("</a>");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='time'>");
 		out.println("Time");
 		out.println("</th>");
 		out.println("</tr>");
 		try{
 			int i=0;
 			while(r.next()){
-				out.println("<tr>");
-				out.println("<td>");
-				out.println("<form><input type='button' value='Read' onClick='readcontent("+i+");' /></form>");
-				out.println("<td>");
+				out.println("<tr id='con'>");
+				out.println("<td id='button'>");
+				out.println("<button onClick='readcontent("+i+");'>Read</button>");
+				out.println("<td id='sub'>");
 				out.println(r.getString("Subject"));
 				out.println("</td>");
 				out.println("<td>");

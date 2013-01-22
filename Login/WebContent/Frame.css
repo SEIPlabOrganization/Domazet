@@ -87,7 +87,8 @@ html {height: 100%;
 }
 #nav a{
 	margin: 0px 0px 0px 15px;
-	
+	color: blue;
+	vertical-align: middle;
 	padding-top: 10px;
 	font: bold 18px Tahoma;
 	text-decoration: none;}

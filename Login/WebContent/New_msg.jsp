@@ -19,7 +19,7 @@
     	<td colspan="3" style="text-align: center; height: 14px;">Message content:</td>
     </tr>
     <tr>
-    	<td colspan="3" style="text-align: center;"><textarea rows="1" cols="1" name="content" style="resize: none; height: 100%; width: 100%;"></textarea></td>
+    	<td colspan="3" style="text-align: center;"><textarea pellcheck='false' rows="1" cols="1" name="content" style="resize: none; height: 100%; width: 100%;"></textarea></td>
     </tr>
     <tr>
     	<td colspan="3" style="height: 20px;"><input type="submit" value="Send" style="width: 100%;"/></td>

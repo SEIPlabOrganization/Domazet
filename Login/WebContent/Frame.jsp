@@ -13,6 +13,11 @@
 		}
 		if(document.URL!="http://localhost:8080/Login/Frame.jsp")
 			location.href="http://localhost:8080/Login/Frame.jsp";
+		
+		function myPopup() {
+		window.open( "JMBAGapp.jsp", "Find JMBAG", 
+		"status = 1, height = 300, width = 300, resizable = 0" )
+		}
 	//-->
 	</script>
 	<link rel="stylesheet" href="Frame.css" />

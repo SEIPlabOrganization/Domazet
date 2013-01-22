@@ -7,7 +7,9 @@
 <jsp:include page="/SecServlet" flush="false" />
 </head>
 <body>
-<h2>Unread messages:</h2>
+<div style="text-align:center;">
+<h2>Unread Messages</h2>
+</div>
 <br/>
 <div id="main">
 <jsp:include page="/MsgAppServlet" flush="true" />

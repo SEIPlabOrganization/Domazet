@@ -179,4 +179,34 @@
     <servlet-name>FrameServlet</servlet-name>
     <url-pattern>/FrameServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InputSingleUser</display-name>
+    <servlet-name>InputSingleUser</servlet-name>
+    <servlet-class>project1.InputSingleUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InputSingleUser</servlet-name>
+    <url-pattern>/InputSingleUser</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>InputUserServlet</display-name>
+    <servlet-name>InputUserServlet</servlet-name>
+    <servlet-class>project1.InputUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InputUserServlet</servlet-name>
+    <url-pattern>/InputUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserPageServlet</display-name>
+    <servlet-name>UserPageServlet</servlet-name>
+    <servlet-class>project1.UserPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserPageServlet</servlet-name>
+    <url-pattern>/UserPageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

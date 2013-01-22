@@ -5,16 +5,17 @@ import java.security.MessageDigest;
 
 public class tst {
 	public static void main(String[] args) {
-		try{
-			MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
-			String s="! % / \' \"";
-			System.out.println(s);
-			s=db.Sec(s);
-			System.out.println(s);
-			s=db.SecGet(s);
-			System.out.println(s);
-		}catch (Exception e){
-			e.printStackTrace();
+		String name="đAlweSqAseQAđĐ";
+		name=name.toLowerCase();
+		for(int i=0; i<name.length(); i++){
+			if(((name.charAt(i)<'a') || (name.charAt(i)>'z')) && ((name.charAt(i)!='č') && (name.charAt(i)!='ć') && (name.charAt(i)!='ž') && (name.charAt(i)!='š') && (name.charAt(i)!='đ')))
+				System.out.println("ne");
 		}
+		System.out.println(name);
+		String buffer=name.toUpperCase();
+		char c[]=name.toCharArray();
+		c[0]=buffer.charAt(0);
+		name=new String(c);
+		System.out.println(name);
 	}
 }

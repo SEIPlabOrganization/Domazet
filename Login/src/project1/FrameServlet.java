@@ -17,6 +17,7 @@ public class FrameServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession(true);
 		
+		//Student is team leader in team 
 		if(("Stud".equalsIgnoreCase((String) session.getAttribute("userrole"))) && ((String) session.getAttribute("teamid")!=null) && ("1".equalsIgnoreCase((String) session.getAttribute("teamrole")))){
 			
 			//Navigation menu
@@ -45,8 +46,6 @@ public class FrameServlet extends HttpServlet {
 			out.println("<iframe name='tools' src='UserPage_Student.jsp' id='tools' ></iframe>");
 		}
 		
-		//Student is team leader in team 
-		
 		
 		//Student without team
 		if(("Stud".equalsIgnoreCase((String) session.getAttribute("userrole"))) && ((String) session.getAttribute("teamid")==null)){
@@ -70,6 +69,7 @@ public class FrameServlet extends HttpServlet {
 			out.println("<a href='UserPage_ProfAssi.jsp' target='tools'>Home</a>");
 			out.println("<a href='ProfAssi_msg.jsp' target='tools'>Messages</a>");
 			out.println("<a href='Register.jsp' target='tools'>Account management</a> ");
+			out.println("<a onClick='myPopup()' style='cursor: pointer;'>Find JMBAG</a> ");
 			out.println("<a href='LogIn.jsp'>Log Out</a>");
 			out.println("</div>");
 		

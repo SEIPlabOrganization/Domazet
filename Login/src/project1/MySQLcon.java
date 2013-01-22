@@ -23,6 +23,20 @@ public class MySQLcon {
 	//In my case : "jdbc:mysql://localhost/test", "root", "a".
 	private String DBinfo[] = {null, null, null};
 	private Connection con;
+	
+	public  MySQLcon(){
+		try{
+			//Accessing driver from JAR file
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			//Create var for connection
+			con = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "a");
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
 	public  MySQLcon(String DBconnadr, String DBusername, String DBpass){
 		try{
 			DBinfo[0]=DBconnadr;

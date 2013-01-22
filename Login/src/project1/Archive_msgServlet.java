@@ -79,6 +79,7 @@ public class Archive_msgServlet extends HttpServlet {
 		r=db.Quer(Query);
 		
 		out.println("<form action=\"Archive_msg.jsp\" method=\"get\">");
+		out.println("  Subject:<input type=\"text\" value=\""+filtersub+"\" maxlength=\"50\" size=\"50\" name=\"sub\"/>");
 		out.println("Author:");
 		out.println("<select name='author'>");
 		out.println("<option>");
@@ -102,15 +103,14 @@ public class Archive_msgServlet extends HttpServlet {
 	        e.printStackTrace();
 		}
 		out.println("</select>");
-		out.println("  Subject:<input type=\"text\" value=\""+filtersub+"\" maxlength=\"50\" size=\"50\" name=\"sub\"/>");
 		out.println("<input type=\"hidden\" value=\""+Aranger+"\" name=\"datear\" \"Send\"/>");
 		out.println("<input type=\"submit\" value=\"Filter\"/>");
 		out.println("</form>");
 		out.println("<table>");
 		out.println("<tr>");
-		out.println("<th>");
+		out.println("<th id='read'>");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='author'>");
 		if(Aranger.equalsIgnoreCase("authorup")){
 			out.println("<a href='Archive_msg.jsp?aranger=authordown&sub="+filtersub+"&author="+filterauthor+"'>");
 			out.println("Author ");
@@ -123,14 +123,14 @@ public class Archive_msgServlet extends HttpServlet {
 			}
 		else{
 			out.println("<a href='Archive_msg.jsp?aranger=authordown&sub="+filtersub+"&author="+filterauthor+"'>");
-			out.println("Author 0");
+			out.println("Author •");
 			}
 		out.println("</a>");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='subject'>");
 		out.println("Subject ");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='date'>");
 		if(Aranger.equalsIgnoreCase("dateup")){
 			out.println("<a href='Archive_msg.jsp?aranger=datedown&sub="+filtersub+"&author="+filterauthor+"'>");
 			out.println("Date ");
@@ -143,11 +143,11 @@ public class Archive_msgServlet extends HttpServlet {
 			}
 		else{
 			out.println("<a href='Archive_msg.jsp?aranger=datedown&sub="+filtersub+"&author="+filterauthor+"'>");
-			out.println("Date 0");
+			out.println("Date •");
 			}
 		out.println("</a>");
 		out.println("</th>");
-		out.println("<th>");
+		out.println("<th id='time'>");
 		out.println("Time");
 		out.println("</th>");
 		out.println("</tr>");
@@ -156,8 +156,8 @@ public class Archive_msgServlet extends HttpServlet {
 			while(r.next()){
 				r1=db.Quer("SELECT Name, Surname FROM Users WHERE idUsers='"+r.getString("Users_idUsers")+"';");
 				r1.first();
-				out.println("<tr>");
-				out.println("<td>");
+				out.println("<tr id='con'>");
+				out.println("<td id='button'>");
 				out.println("<form action='ReadArchive_msg.jsp?aranger="+Aranger+"&sub="+filtersub+"&author="+filterauthor+"' method='post'>");
 				out.println("<input type='hidden' value='"+r.getString("idMessages")+"' name='id'/>");
 				out.println("<input type='hidden' value='"+r1.getString("Name")+" "+r1.getString("Surname")+"' name='from'/>");
@@ -168,10 +168,10 @@ public class Archive_msgServlet extends HttpServlet {
 				out.println("<input type='submit' value='Read'/>");
 				out.println("</form>");
 				out.println("</td>");
-				out.println("<td>");
+				out.println("<td id='aut'>");
 				out.println(r1.getString("Name")+" "+r1.getString("Surname"));
 				out.println("</td>");
-				out.println("<td>");
+				out.println("<td id='sub'>");
 				out.println(r.getString("Subject"));
 				out.println("</td>");
 				out.println("<td>");
