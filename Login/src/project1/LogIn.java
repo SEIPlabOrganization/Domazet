@@ -20,7 +20,7 @@ public class LogIn {
 			while((32-protpass.length())!=0){
 				protpass="0"+protpass;
 			}
-			db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+			db = new MySQLcon();
 			r = db.Quer("SELECT * FROM Users WHERE User_name='"+ u +"' AND User_password='"+ protpass +"';");
 		}catch (Exception e){
 			protpass = null;

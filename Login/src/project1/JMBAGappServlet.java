@@ -16,7 +16,7 @@ public class JMBAGappServlet extends HttpServlet {
 		if((request.getParameter("name")!=null) && (request.getParameter("surname")!=null) && (request.getParameter("name")!="") && (request.getParameter("surname")!="")){
 			try{
 				PrintWriter out = response.getWriter();
-				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+				MySQLcon db = new MySQLcon();
 				ResultSet r=db.Quer("SELECT * FROM Users WHERE Name='"+(String) request.getParameter("name")+"' AND Surname='"+(String) request.getParameter("surname")+"';");
 				out.println("<hr/>");
 				if(r.first()){

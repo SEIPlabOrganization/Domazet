@@ -33,7 +33,7 @@ public class MySQLcon {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			//Create var for connection
-			con = DriverManager.getConnection("jdbc:mysql://localhost/mydb", "root", "a");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/mydbfin", "root", "a");
 
 		}catch(Exception e){
 			e.printStackTrace();

@@ -33,7 +33,7 @@ public class New_msgServlet extends HttpServlet {
 		String Wall;
 		String ret="error.";
 		
-		MySQLcon db= new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+		MySQLcon db= new MySQLcon();
 		
 		ResultSet r=db.Quer("SELECT idUsers_team FROM Users_team WHERE Team_idTeam='"+(String) session.getAttribute("teamid")+"' AND Users_idUsers='"+Author+"';");
 	

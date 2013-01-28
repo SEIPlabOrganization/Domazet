@@ -14,7 +14,7 @@ public class ReadApp_msgServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+		MySQLcon db = new MySQLcon();
 		db.Upd("UPDATE Messages SET Messages.Read=1 WHERE idMessages='"+(String) request.getParameter("id")+"';");
 		ResultSet r=db.Quer("SELECT Name, Surname FROM Users WHERE idUsers='"+(String) request.getParameter("idu")+"';");
 		try {

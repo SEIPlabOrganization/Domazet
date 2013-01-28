@@ -19,7 +19,7 @@ public class RegisterServlet extends HttpServlet {
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			try{
 				HttpSession session = request.getSession(true);
-				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+				MySQLcon db = new MySQLcon();
 				ResultSet r = db.Quer("SELECT Opt FROM Users WHERE idUsers='"+ session.getAttribute("userid") +"';");
 				r.first();
 				if(r.getString("Opt").charAt(0)=='0'){

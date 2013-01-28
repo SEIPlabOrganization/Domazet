@@ -108,7 +108,7 @@ public class ReadExcelFile {
     }
     
     public String addToDB() {
-    	MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+    	MySQLcon db = new MySQLcon();
 		ProjSec sec = new ProjSec();
 		String errorstr = "";
 		if(stringHolder==null)

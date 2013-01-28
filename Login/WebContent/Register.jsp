@@ -27,10 +27,6 @@ table{ margin: auto; position: absolute; top: 100px; bottom: 0px; left: 0px; rig
    		document.getElementById("des").innerHTML="Tool2 info";
    	}
 
-
-   
- 
-    
 </script>
 </head>
 <body >

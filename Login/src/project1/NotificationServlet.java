@@ -18,7 +18,7 @@ public class NotificationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
-		MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+		MySQLcon db = new MySQLcon();
 		ResultSet r1;
 		ResultSet r2;
 		ResultSet r;

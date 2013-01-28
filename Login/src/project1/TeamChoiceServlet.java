@@ -17,7 +17,7 @@ public class TeamChoiceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+		MySQLcon db = new MySQLcon();
 		ResultSet r;
 		try{
 			HttpSession session = request.getSession(true);

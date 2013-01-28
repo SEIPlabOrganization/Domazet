@@ -17,6 +17,9 @@
     function Tool1() {
     	document.getElementById("des").innerHTML="Tool1 info";
     }
+    function Createteam() {
+    	document.getElementById("des").innerHTML="Tool for creating a tem";
+    }
 </script>
 </head>
 <body onload="Def()">
@@ -26,7 +29,7 @@
 				<table>
 					<tr>
 						<td>
-							<a href="" target="tools" onmouseover="Tool1()" onmouseout="Def()">Tool1</a><br/><br/>
+							<a href="CreateTeam.jsp" target="tools" onmouseover="Createteam()" onmouseout="Def()">Create new team</a><br/><br/>
 						</td>
 					</tr>
 					

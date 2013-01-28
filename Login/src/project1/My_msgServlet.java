@@ -17,7 +17,7 @@ public class My_msgServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
 		PrintWriter out = response.getWriter();
-		MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
+		MySQLcon db = new MySQLcon();
 		
 		ResultSet r=db.Quer("SELECT idUsers_team FROM Users_team WHERE Team_idTeam='"+(String) session.getAttribute("teamid")+"' AND Users_idUsers='"+(String) session.getAttribute("userid")+"';");
 		
