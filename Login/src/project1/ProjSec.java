@@ -5,11 +5,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class ProjSec {
-	public String xssprot(String s){
-		for(int i=0; i<s.length();i++){
-		}
-		return s;
-	}
 	
 	public String toMD5(String s){
 		MessageDigest m;

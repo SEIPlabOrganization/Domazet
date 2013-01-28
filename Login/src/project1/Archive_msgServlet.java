@@ -79,10 +79,10 @@ public class Archive_msgServlet extends HttpServlet {
 		r=db.Quer(Query);
 		
 		out.println("<form action=\"Archive_msg.jsp\" method=\"get\">");
-		out.println("  Subject:<input type=\"text\" value=\""+filtersub+"\" maxlength=\"50\" size=\"50\" name=\"sub\"/>");
+		out.println("  Subject:<input type=\"text\" value=\""+filtersub+"\" maxlength=\"50\" size=\"30\" name=\"sub\"/>");
 		out.println("Author:");
 		out.println("<select name='author'>");
-		out.println("<option>");
+		out.println("<option value='%'>");
 		out.println("All");
 		out.println("</option>");
 		try{

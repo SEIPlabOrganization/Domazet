@@ -22,6 +22,7 @@
 	</script>
 	<link rel="stylesheet" href="Frame.css" />
 	<jsp:include page="/SecServlet" flush="false" />
+	<jsp:include page="/RegisterServlet" flush="false" />
 </head>
 <body>
 	<div id="main_wrapper">

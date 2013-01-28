@@ -20,17 +20,13 @@ public class RegisterServlet extends HttpServlet {
 			try{
 				HttpSession session = request.getSession(true);
 				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
-				ResultSet r = db.Quer("SELECT * FROM Users WHERE idUsers='"+ session.getAttribute("userid") +"';");
+				ResultSet r = db.Quer("SELECT Opt FROM Users WHERE idUsers='"+ session.getAttribute("userid") +"';");
 				r.first();
-				String pass1 = r.getString("User_password");
-				ProjSec sec = new ProjSec();
-				String pass2 = sec.toMD5(r.getString("idUsers"));
-				
-				if(r.getString("User_name").equalsIgnoreCase(r.getString("Name")+"."+r.getString("Surname")) && pass2.equalsIgnoreCase(pass1)){
-					session.setAttribute( "newacc", "yes"); 
-					ServletContext sc = this.getServletContext();
-					RequestDispatcher rd = sc.getRequestDispatcher("/Register.jsp");
-					rd.forward(request, response);
+				if(r.getString("Opt").charAt(0)=='0'){
+					request.getRequestDispatcher("/Register.jsp").forward(request, response);
+				}
+				if(r.getString("Opt").charAt(0)=='1'){
+					request.getRequestDispatcher("/Register.jsp").forward(request, response);
 				}
 			}catch (Exception e){
 				e.printStackTrace();

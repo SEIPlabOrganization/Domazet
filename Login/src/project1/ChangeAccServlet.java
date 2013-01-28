@@ -1,10 +1,10 @@
 package project1;
 
 import java.io.IOException;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,62 +22,68 @@ public class ChangeAccServlet extends HttpServlet {
 				String oldpassword = request.getParameter("oldpassword");
 				String newpassword = request.getParameter("newpassword");
 				String repeatpassword = request.getParameter("repeatpassword");
+				String email = request.getParameter("email");
+				String repeatemail = request.getParameter("repeatemail");
 				HttpSession session = request.getSession(true);
-
-				
-				
-				MessageDigest m;
-				if(oldpassword!=null){
-					m=MessageDigest.getInstance("MD5");
-					m.update(oldpassword.getBytes(),0,oldpassword.length());
-					oldpassword = new BigInteger(1,m.digest()).toString(16);
-					while((32-oldpassword.length())!=0){
-						oldpassword="0"+oldpassword;
+				int check=1;
+				MySQLcon db = new MySQLcon();
+				ResultSet r;
+				String ret="Error ocured.";
+				try{
+					r = db.Quer("SELECT User_password FROM Users WHERE idUsers='"+(String) session.getAttribute("userid")+"';");
+					if(r.first()){
+						if(!db.toMD5(oldpassword).equalsIgnoreCase(r.getString("User_password"))){
+							check=0;
+							ret="Incorrect old password.";
+						}
+					}else
+						check=0;
+					if(!newpassword.equalsIgnoreCase(repeatpassword)){
+						ret="New passwords did not match";
+						check=0;
 					}
-				}
-				
-				if(newpassword!=null){
-					m=MessageDigest.getInstance("MD5");
-					m.update(newpassword.getBytes(),0,newpassword.length());
-					newpassword = new BigInteger(1,m.digest()).toString(16);
-					while((32-newpassword.length())!=0){
-						newpassword="0"+newpassword;
+					r = db.Quer("SELECT User_name FROM Users WHERE User_name='"+newusername+"';");
+					if(r.first()){
+							check=0;
+							ret="Username already exists.";
 					}
-				}
-				if(repeatpassword!=null){
-					m=MessageDigest.getInstance("MD5");
-					m.update(repeatpassword.getBytes(),0,repeatpassword.length());
-					repeatpassword = new BigInteger(1,m.digest()).toString(16);
-					while((32-repeatpassword.length())!=0){
-						repeatpassword="0"+repeatpassword;
+					if(!email.equalsIgnoreCase(repeatemail)){
+						check=0;
+						ret="E-mails did not match.";
 					}
+					r = db.Quer("SELECT Email FROM Users WHERE Email='"+email+"' and Opt LIKE '2%';");
+					if(r.first()){
+							check=0;
+							ret="The E-mail is already asigned to a user.";
+					}
+				}catch (Exception e){
+					e.printStackTrace();
+					check=0;
 				}
-				
-				int i=1;
-				
-				if(session.getAttribute("newacc")=="yes"){
-					if(newusername==null)
-						i=0;
-				}
-				MySQLcon db = new MySQLcon("jdbc:mysql://localhost/mydb", "root", "a");
-				ResultSet r = db.Quer("SELECT * FROM Users WHERE idUsers='"+ session.getAttribute("userid") +"';");
+				r = db.Quer("SELECT * FROM Users WHERE idUsers='"+ session.getAttribute("userid") +"';");
 				r.first();
-				if(!oldpassword.equalsIgnoreCase(r.getString("User_password")))
-					i=0;
-				if(newpassword.equalsIgnoreCase(null))
-					i=0;
-				if(!newpassword.equalsIgnoreCase(repeatpassword))
-					i=0;
-				if(i==1){
-					if(session.getAttribute("newacc")=="yes")
-						db.Upd("UPDATE Users SET User_name='"+newusername+"' WHERE idUsers='"+ session.getAttribute("userid") +"' ;");
-					db.Upd("UPDATE Users SET User_password='"+newpassword+"' WHERE idUsers='"+ session.getAttribute("userid") +"' ;");
-					System.out.println( "UPDATE Users SET User_password='"+newpassword+"' WHERE idUsers='"+ session.getAttribute("userid") +"' ;");
-					session.invalidate();
-					request.getRequestDispatcher("/LogIn.jsp").forward(request, response);
-				}else{
-					 request.getRequestDispatcher("/Register.jsp").forward(request, response);
+				
+				
+				
+				System.out.println(check);
+				if(check==1){
+					char c[]={'1',(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9)),(char) ('0'+(int)(Math.random()*9))};
+					String opt=new String(c);
+					String sub="SPtool registration confirmation";
+					String cont="Go to folowing link to compleate registration:<br/><br/><a href='http://localhost:8080/Login/EmailCheckServlet?id="+(String) session.getAttribute("userid")+"&nm="+newusername+"&pw="+db.toMD5(newpassword)+"&check="+opt+"'>Click here</a> ";
+					if(db.Upd("UPDATE Users SET Email='"+email+"', Opt='"+opt+"' WHERE idUsers='"+ (String) session.getAttribute("userid") +"' ;")){
+						SendEmail em=new SendEmail();
+						if(em.send(email, sub, cont)){
+							ServletContext sc = this.getServletContext();
+							RequestDispatcher rd = sc.getRequestDispatcher("/EmailSent.html");
+							rd.forward(request, response);
+						}
+					}
 				}
+				ServletContext sc = this.getServletContext();
+				RequestDispatcher rd = sc.getRequestDispatcher("/Register.jsp?ret="+ret);
+				rd.forward(request, response);
+				
 			}catch (Exception e){
 				e.printStackTrace();
 			}

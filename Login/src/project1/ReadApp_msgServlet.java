@@ -28,7 +28,7 @@ public class ReadApp_msgServlet extends HttpServlet {
 			r.first();
 			out.print("<td style=\"width: 100px; height: 30px;\">Recived on:</td><td style=\"width: 100px;\">"+r.getString("Date")+"</td>");
 			out.println("<td style=\"width: 40px; height: 30px; text-align: right;\">At:</td><td style=\"width: 100px;\">"+r.getString("time")+"</td></tr>");
-			out.print("<tr><td style=\"width: 80px; height: 30px;\">Subject:</td><td colspan=\"4\"><textarea rows=\"1\" cols=\"1\" name=\"content\" style=\"resize: none; width: 100%; height: 25px; font-size: 16px; vertical-align: middle;\" onfocus=\"blur();\" spellcheck='false'>");
+			out.print("<tr><td style=\"width: 80px; height: 30px;\">Subject:</td><td colspan=\"5\"><textarea rows=\"1\" cols=\"1\" name=\"content\" style=\"resize: none; width: 100%; height: 25px; font-size: 16px; vertical-align: middle;\" onfocus=\"blur();\" spellcheck='false'>");
 			out.println(r.getString("Subject")+"</textarea></td></tr>");
 			out.println("<tr><td style=\"height: 40px; text-align: center;\" colspan=\"6\">Message content:</td></tr>");
 			out.print("<tr><td colspan=\"6\"><textarea rows=\"1\" cols=\"1\" name=\"content\" style=\"resize: none; width: 100%; height: 100%; font-size: 16px; vertical-align: middle;\" onfocus=\"blur();\" spellcheck='false'>");

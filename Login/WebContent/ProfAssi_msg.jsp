@@ -9,15 +9,16 @@
 </head>
 <body style="height: 100%; width: 100%;">
 <div style="margin-right:10px; margin-left:10px;">
-<form action="New_msgServlet" method="post" style="height: 100%; width: 100%;">
+<form action="New_ProfAssimsgServlet" method="post" style="height: 100%; width: 100%;">
 <table style="text-align: left; height: 100%; width: 100%;">
 	<tr>
 		<td rowspan="2">To:</td>
-		<td style="height: 14px; width: 70px;">JMBAG:</td><td style="height: 14px;"><input type="text" maxlength="10" size="50" name="subject" style="width: 100%;"/></td>
-		<td rowspan="2" style="text-align: left;"><textarea rows="1" cols="240" name="content" style="resize: none; height: 100%; width: 100%; font-size: 14px;" onfocus="blur();">Chose the student on who's wall to post a message. For aid in finding the students JMBAG and team id use the find student application in the menu above.</textarea></td>
+		<td style="height: 14px; width: 70px;">JMBAG:</td>
+		<td style="height: 14px;"><input type="text" maxlength="10" size="50" name="jmbag" style="width: 100%;"/></td>
+		<td rowspan="2" style="text-align: left;"><textarea rows="1" cols="240" style="resize: none; height: 100%; width: 100%; font-size: 14px;" onfocus="blur();">Chose the student on who's wall to post a message. For aid in finding the students JMBAG and team id use the find student application in the menu above.</textarea></td>
 	</tr>
 	<tr>
-		<td style="height: 14px; width: 70px;">Team id:</td><td style="height: 14px;"><input type="text" maxlength="10" size="50" name="subject" style="width: 100%;"/></td>
+		<td style="height: 14px; width: 70px;">Team id:</td><td style="height: 14px;"><input type="text" maxlength="10" size="50" name="team" style="width: 100%;"/></td>
 	</tr>
 	<tr>
     	<td style="height: 50px; width: 30px; text-align: left;">Subject:</td><td colspan="3" style="height: 14px;"><input type="text" maxlength="50" size="50" name="subject" style="width: 100%;"/></td>

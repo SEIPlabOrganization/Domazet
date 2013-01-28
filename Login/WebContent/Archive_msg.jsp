@@ -5,10 +5,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
 *{ margin: 0px; padding: 0px}
-table{width: 780px; text-align: center;}
+table{width: 740px; text-align: center;}
 #read{width: 60px;}
 #author{width: 160px;}
-#subject{width: 380px;}
+#subject{width: 340px;}
 #date{width: 100px;}
 #time{width: 100px;}
 a{font: bold 16px Tahoma; text-decoration: none; color: black;}

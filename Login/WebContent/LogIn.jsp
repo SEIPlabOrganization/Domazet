@@ -15,8 +15,10 @@ body, html{ width: 100%; height: 100%; background-color:#5BD4FF; text-align: cen
 		if (top.location!= self.location) {
 			top.location = self.location.href
 		}
-		if(document.URL!="http://localhost:8080/Login/LogIn.jsp")
-			location.href="http://localhost:8080/Login/LogIn.jsp";
+		if(document.URL!="http://localhost:8080/Login/LogIn.jsp"){
+			temp=document.getElementById("ret").innerHTML;
+			location.href="http://localhost:8080/Login/LogIn.jsp"+"ret="+temp;
+		}
 	//-->
 	</script>
 <jsp:include page="/UnsetSessionServlet" flush="true" />
@@ -45,7 +47,19 @@ body, html{ width: 100%; height: 100%; background-color:#5BD4FF; text-align: cen
 		</tr> 	
     </table>
     </div>
-    
+    <%
+   	if((request.getParameter("ret"))!=null){
+   		%>
+   		<table style="text-align: center;">
+   		<tr>
+    	<td colspan="3" style="text-align: center; height: 50px;" id="ret">
+    		<%out.print(request.getParameter("ret"));%>
+    	</td>
+    	</tr>
+    	</table>
+    	<%
+   	}
+	%>
 </td></tr>
 </table>
 </form>

@@ -40,7 +40,7 @@ public class TeamChoiceServlet extends HttpServlet {
 					if(r2.first()){
 						out.print("<tr><td>Team ID:</td>");
 						out.print("<td>"+r.getString("Team_idTeam")+"</td>");
-						out.print("<td rowspan='2'><a href='TeamChoice.jsp?teamid="+r.getString("Team_idTeam")+"'>Chose</a></td></tr>");
+						out.print("<td rowspan='2'><a target='_top' href='TeamChoice.jsp?teamid="+r.getString("Team_idTeam")+"'>Chose</a></td></tr>");
 						out.print("<tr><td>Team Name:</td>");	
 						out.print("<td>"+r2.getString("Name")+"</td></tr>");
 						out.print("<tr><td colspan='3'><hr></td></tr>");	

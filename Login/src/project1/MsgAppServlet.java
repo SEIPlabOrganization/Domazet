@@ -25,7 +25,7 @@ public class MsgAppServlet extends HttpServlet {
 		try{
 			r.first();
 			String myWall = r.getString("idUsers_team");
-			r=db.Quer("SELECT * FROM Messages WHERE Users_team_idUsers_team='"+myWall+"' AND Users_idUsers!='"+(String) session.getAttribute("userid")+"';" );
+			r=db.Quer("SELECT * FROM Messages WHERE Users_team_idUsers_team='"+myWall+"' AND Users_idUsers!='"+(String) session.getAttribute("userid")+"' AND Messages.Read=0;" );
 			while(r.next()){
 				r1=db.Quer("SELECT Name, Surname FROM Users WHERE idUsers='"+r.getString("Users_idUsers")+"';");
 				r1.first();

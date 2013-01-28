@@ -59,15 +59,7 @@ public class InputUserServlet extends HttpServlet {
 			if(check==1){
 				MySQLcon db = new MySQLcon();
 				if(role.equalsIgnoreCase("Stud")){
-					String password=jmbag;
-					MessageDigest m;
-					m=MessageDigest.getInstance("MD5");
-					m.update(password.getBytes(),0,password.length());
-					password = new BigInteger(1,m.digest()).toString(16);
-					while((32-password.length())!=0){
-						password="0"+password;
-					}
-					if(!db.Upd("INSERT INTO Users SET idUsers='"+jmbag+"', Name='"+name+"', Surname='"+surname+"', User_name='"+name+"."+surname+"', User_password='"+password+"', Role='"+role+"';"))
+					if(!db.Upd("INSERT INTO Users SET idUsers='"+jmbag+"', Name='"+name+"', Surname='"+surname+"', User_name='"+jmbag+"', User_password='"+db.toMD5(name+"."+surname)+"', Role='"+role+"';"))
 						check=0;
 				}
 				if(role.equalsIgnoreCase("Prof") || role.equalsIgnoreCase("Assi")){
@@ -92,7 +84,7 @@ public class InputUserServlet extends HttpServlet {
 						if(r.first())
 							id=null;
 					}
-					if(!db.Upd("INSERT INTO Users SET idUsers='"+id+"', Name='"+name+"', Surname='"+surname+"', User_name='"+name+"."+surname+"', User_password='"+password+"', Role='"+role+"';"))
+					if(!db.Upd("INSERT INTO Users SET idUsers='"+id+"', Name='"+name+"', Surname='"+surname+"', User_name='"+name+"."+surname+".prof', User_password='"+password+"', Role='"+role+"';"))
 						check=0;
 				}
 				

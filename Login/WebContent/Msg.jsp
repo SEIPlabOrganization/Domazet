@@ -28,9 +28,14 @@
 				<table>
 					<tr>
 						<td>
-							<a href="Archive_msg.jsp" target="msgwin" onmouseover="Tool1()" onmouseout="Def()">Archive</a><br/><br/>
+							<a href="Archive.jsp" target="msgwin" onmouseover="Tool1()" onmouseout="Def()">Archive</a><br/><br/>
 							<a href="My_msg.jsp" target="msgwin" onmouseover="Tool2()" onmouseout="Def()">My Posts</a><br/><br/>
 							<a href="New_msg.jsp" target="msgwin" onmouseover="mouseOver()" onmouseout="Def()">Write new Post</a><br/><br/>
+							<%
+							if(((String) session.getAttribute("teamrole")).equalsIgnoreCase("1")){
+								out.println("<a href=\"Manager_msg.jsp\" target=\"msgwin\" onmouseover=\"mouseOver()\" onmouseout=\"Def()\">Notify member</a><br/><br/>");
+							}
+							%>
 							
 						</td>
 					</tr>

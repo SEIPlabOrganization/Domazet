@@ -118,7 +118,7 @@ public class ReadExcelFile {
 			return warningstr;
 		int k=0;
 		for (int i = 0; i < stringHolder.size(); i++, k++) {
-        	if(!(db.Upd("INSERT INTO Users SET idUsers='"+(stringHolder.get(i))[0]+"', Name='"+(stringHolder.get(i))[1]+"', Surname='"+(stringHolder.get(i))[2]+"', User_name='"+(stringHolder.get(i))[1]+"."+(stringHolder.get(i))[2]+"', User_password='"+sec.toMD5((stringHolder.get(i))[0])+"', Role='Stud';"))){
+        	if(!(db.Upd("INSERT INTO Users SET idUsers='"+(stringHolder.get(i))[0]+"', Name='"+(stringHolder.get(i))[1]+"', Surname='"+(stringHolder.get(i))[2]+"', User_name='"+(stringHolder.get(i))[0]+"', User_password='"+sec.toMD5((stringHolder.get(i))[1]+"."+(stringHolder.get(i))[2])+"', Role='Stud';"))){
     			errorstr += "error inputing row: "+(i+1)+"<br/>";
     			k--;
     			}

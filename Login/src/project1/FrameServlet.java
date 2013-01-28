@@ -24,7 +24,7 @@ public class FrameServlet extends HttpServlet {
 			out.println("<div id='nav'>");
 			out.println("<a href='UserPage_TeamLeader.jsp' target='tools'>Home</a>");
 			out.println("<a href='Msg.jsp' target='tools'>Messages</a>");
-			out.println("<a href='Register.jsp' target='tools'>Account management</a> ");
+			out.println("<a href='AccSetings.jsp' target='tools'>Account management</a> ");
 			out.println("<a href='LogIn.jsp'>Log Out</a>");
 			out.println("</div>");
 		
@@ -38,7 +38,7 @@ public class FrameServlet extends HttpServlet {
 			out.println("<div id='nav'>");
 			out.println("<a href='UserPage_Student.jsp' target='tools'>Home</a>");
 			out.println("<a href='Msg.jsp' target='tools'>Messages</a>");
-			out.println("<a href='Register.jsp' target='tools'>Account management</a> ");
+			out.println("<a href='AccSetings.jsp' target='tools'>Account management</a> ");
 			out.println("<a href='LogIn.jsp'>Log Out</a>");
 			out.println("</div>");
 		
@@ -53,7 +53,7 @@ public class FrameServlet extends HttpServlet {
 			//Navigation menu
 			out.println("<div id='nav'>");
 			out.println("<a href='UserPage_NoTeam.jsp' target='tools'>Home</a>");
-			out.println("<a href='Register.jsp' target='tools'>Account management</a> ");
+			out.println("<a href='AccSetings.jsp' target='tools'>Account management</a> ");
 			out.println("<a href='LogIn.jsp'>Log Out</a>");
 			out.println("</div>");
 		
@@ -68,7 +68,7 @@ public class FrameServlet extends HttpServlet {
 			out.println("<div id='nav'>");
 			out.println("<a href='UserPage_ProfAssi.jsp' target='tools'>Home</a>");
 			out.println("<a href='ProfAssi_msg.jsp' target='tools'>Messages</a>");
-			out.println("<a href='Register.jsp' target='tools'>Account management</a> ");
+			out.println("<a href='AccSetings.jsp' target='tools'>Account management</a> ");
 			out.println("<a onClick='myPopup()' style='cursor: pointer;'>Find JMBAG</a> ");
 			out.println("<a href='LogIn.jsp'>Log Out</a>");
 			out.println("</div>");
